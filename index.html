@@ -3,142 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Təkər Evi 044</title>
+<title>Təkər Evi</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#0c1017;color:#fff}
-header{background:#121a25;padding:22px 18px;border-bottom:1px solid #273342}
-.logo{font-size:27px;font-weight:900;color:#ff6b22}
-.logo span{color:white}
-header p{color:#9eabbc;margin-top:6px;font-size:13px}
-.hero{padding:35px 20px;background:linear-gradient(145deg,#182637,#0c1017)}
-.tag{color:#ff792f;font-size:13px;font-weight:bold}
-.hero h1{font-size:36px;line-height:1.15;margin:16px 0}
-.hero h1 span{color:#ff7028}
-.hero p{color:#bdc7d3;line-height:1.6}
-.btn{display:inline-block;padding:14px 20px;background:#ff7028;color:#fff;text-decoration:none;border-radius:10px;font-weight:bold;margin-top:20px}
-.section{padding:25px 18px}
-.section h2{font-size:23px;margin-bottom:18px}
-.search{width:100%;padding:14px;background:#161f2b;border:1px solid #344253;border-radius:10px;color:white;margin-bottom:15px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.filters button{background:#202c3a;border:1px solid #344253;color:#fff;padding:10px 14px;border-radius:20px}
-.filters button.active{background:#ff7028;border-color:#ff7028}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:#161f2b;border:1px solid #293746;border-radius:13px;padding:14px}
-.tire{height:115px;display:flex;align-items:center;justify-content:center;font-size:65px}
-.card h3{font-size:16px;margin-bottom:8px}
-.card p{color:#aebac8;font-size:13px;line-height:1.5}
-.price{color:#ff782e;font-size:19px;font-weight:bold;margin-top:12px}
-.order{display:block;text-align:center;background:#253344;color:white;padding:11px;border-radius:8px;text-decoration:none;margin-top:12px;font-size:13px}
-.info{background:#151e29;border-radius:13px;padding:18px;margin-top:10px}
-.info p{color:#bdc7d3;line-height:1.8;font-size:14px}
-footer{text-align:center;padding:30px 18px;color:#8e9baa;border-top:1px solid #263341;font-size:13px}
-.whatsapp{position:fixed;bottom:18px;right:16px;background:#20c66b;color:#fff;padding:15px 18px;border-radius:40px;text-decoration:none;font-weight:bold;box-shadow:0 4px 20px #0008}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;background:#101318;color:white}
+header{text-align:center;padding:25px;background:#202630;border-bottom:3px solid orange}
+.logo{font-size:30px;color:orange;font-weight:bold}
+.hero{text-align:center;padding:65px 15px;background:linear-gradient(120deg,#303844,#101318)}
+h1{font-size:32px;margin-bottom:15px}
+h2{text-align:center;color:orange;margin-bottom:25px}
+p{line-height:1.7}
+.btn{display:inline-block;background:orange;color:black;padding:13px 22px;border-radius:7px;text-decoration:none;font-weight:bold;margin-top:15px}
+section{padding:35px 15px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px;max-width:850px;margin:auto}
+.card{background:#252c36;padding:15px;border-radius:12px;text-align:center}
+.card img{width:100%;height:130px;object-fit:contain}
+.card h3{margin:12px 0}
+.price{color:orange;font-size:21px;font-weight:bold;margin:12px}
+.card a{display:block;background:orange;color:black;padding:10px;text-decoration:none;border-radius:6px}
+select{padding:12px;background:#252c36;color:white;border-radius:7px;margin-bottom:20px}
+.filters{text-align:center}
+.contact{text-align:center;background:#202630}
+footer{text-align:center;padding:20px;color:#aaa}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="logo">🛞 TƏKƏR <span>EVİ 044</span></div>
-  <p>Avtomobiliniz üçün keyfiyyətli təkərlər</p>
+<div class="logo">🚗 TƏKƏR EVİ</div>
+<p>Keyfiyyətli təkərlər, sərfəli qiymətlər!</p>
 </header>
 
-<section class="hero">
-  <div class="tag">TƏKƏR EVİ 044-Ə XOŞ GƏLMİŞSİNİZ</div>
-  <h1>Yolunuz<br><span>təhlükəsiz</span> olsun!</h1>
-  <p>Keyfiyyətli təkərlər, münasib qiymətlər və etibarlı xidmət. Avtomobilinizə uyğun təkəri bizimlə seçin.</p>
-  <a class="btn" href="#mehsullar">Təkərlərə bax →</a>
+<div class="hero">
+<h1>Avtomobiliniz üçün ən yaxşı təkərlər!</h1>
+<p>Keyfiyyət və etibar bir ünvanda.</p>
+<a href="#products" class="btn">Məhsullara bax</a>
+</div>
+
+<section id="products">
+<h2>TƏKƏR KATALOQU</h2>
+<div class="filters">
+<select id="size" onchange="filterProducts()">
+<option value="all">Bütün ölçülər</option>
+<option value="R16">R16</option>
+<option value="R17">R17</option>
+<option value="R18">R18</option>
+<option value="R19">R19</option>
+</select>
+</div>
+
+<div class="products">
+<div class="card" data-size="R16">
+<img src="https://images.unsplash.com/photo-1578844251758-2f71da64c9a7?w=400" alt="Təkər">
+<h3>Premium R16</h3>
+<div class="price">120 AZN</div>
+<a href="https://wa.me/994XXXXXXXXX">Sifariş et</a>
+</div>
+
+<div class="card" data-size="R17">
+<img src="https://images.unsplash.com/photo-1578844251758-2f71da64c9a7?w=400" alt="Təkər">
+<h3>Premium R17</h3>
+<div class="price">145 AZN</div>
+<a href="https://wa.me/994XXXXXXXXX">Sifariş et</a>
+</div>
+
+<div class="card" data-size="R18">
+<img src="https://images.unsplash.com/photo-1578844251758-2f71da64c9a7?w=400" alt="Təkər">
+<h3>Premium R18</h3>
+<div class="price">170 AZN</div>
+<a href="https://wa.me/994XXXXXXXXX">Sifariş et</a>
+</div>
+
+<div class="card" data-size="R19">
+<img src="https://images.unsplash.com/photo-1578844251758-2f71da64c9a7?w=400" alt="Təkər">
+<h3>Premium R19</h3>
+<div class="price">195 AZN</div>
+<a href="https://wa.me/994XXXXXXXXX">Sifariş et</a>
+</div>
+</div>
 </section>
 
-<section class="section" id="mehsullar">
-  <h2>🛞 Təkər kataloqu</h2>
-  <input class="search" id="search" placeholder="Təkər ölçüsü axtar (məs: 205/55 R16)">
-
-  <div class="filters">
-    <button class="active" onclick="filterTires('all',this)">Hamısı</button>
-    <button onclick="filterTires('16',this)">R16</button>
-    <button onclick="filterTires('17',this)">R17</button>
-    <button onclick="filterTires('18',this)">R18</button>
-  </div>
-
-  <div class="grid" id="grid"></div>
+<section class="contact">
+<h2>BİZİMLƏ ƏLAQƏ</h2>
+<p>Sifariş üçün WhatsApp vasitəsilə əlaqə saxlayın.</p>
+<a class="btn" href="https://wa.me/994XXXXXXXXX">WhatsApp</a>
 </section>
 
-<section class="section">
-  <h2>📞 Bizimlə əlaqə</h2>
-  <div class="info">
-    <p>🛞 Təkər Evi 044</p>
-    <p>📍 Ünvan: Ünvanınızı buraya əlavə edin</p>
-    <p>📱 Telefon: Telefon nömrənizi əlavə edin</p>
-    <p>⏰ İş saatları: 09:00 – 20:00</p>
-  </div>
-  <a class="btn" href="#" onclick="contactWhatsApp('Salam, təkərlər haqqında məlumat almaq istəyirəm')">WhatsApp ilə əlaqə</a>
-</section>
-
-<footer>
-  <p>© 2026 Təkər Evi 044</p>
-  <p>Keyfiyyət • Etibar • Təhlükəsizlik</p>
-</footer>
-
-<a class="whatsapp" href="#" onclick="contactWhatsApp('Salam, Təkər Evi 044')">WhatsApp</a>
+<footer>© 2026 Təkər Evi</footer>
 
 <script>
-const tires=[
- {size:"195/65 R15",brand:"Təkər",price:"Qiymət üçün əlaqə",rim:"15"},
- {size:"205/55 R16",brand:"Təkər",price:"Qiymət üçün əlaqə",rim:"16"},
- {size:"215/60 R16",brand:"Təkər",price:"Qiymət üçün əlaqə",rim:"16"},
- {size:"225/45 R17",brand:"Təkər",price:"Qiymət üçün əlaqə",rim:"17"},
- {size:"225/50 R17",brand:"Təkər",price:"Qiymət üçün əlaqə",rim:"17"},
- {size:"235/55 R18",brand:"Təkər",price:"Qiymət üçün əlaqə",rim:"18"},
- {size:"245/40 R18",brand:"Təkər",price:"Qiymət üçün əlaqə",rim:"18"},
- {size:"265/65 R17",brand:"Təkər",price:"Qiymət üçün əlaqə",rim:"17"}
-];
-
-let currentFilter="all";
-
-function render(){
- const q=document.getElementById("search").value.toLowerCase();
- const grid=document.getElementById("grid");
- grid.innerHTML="";
- const list=tires.filter(t=>
-  (currentFilter==="all"||t.rim===currentFilter)&&
-  (t.size.toLowerCase().includes(q)||t.brand.toLowerCase().includes(q))
- );
- list.forEach(t=>{
-  grid.innerHTML+=`
-   <div class="card">
-    <div class="tire">🛞</div>
-    <h3>${t.size}</h3>
-    <p>${t.brand}</p>
-    <div class="price">${t.price}</div>
-    <a class="order" href="#" onclick="contactWhatsApp('Salam, ${t.size} ölçülü təkər ilə maraqlanıram')">Sifariş et</a>
-   </div>`;
- });
- if(list.length===0){
-  grid.innerHTML="<p>Bu ölçüdə təkər tapılmadı.</p>";
- }
+function filterProducts(){
+let size=document.getElementById("size").value;
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=(size==="all"||card.dataset.size===size)?"block":"none";
+});
 }
-
-function filterTires(rim,btn){
- currentFilter=rim;
- document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
- btn.classList.add("active");
- render();
-}
-
-document.getElementById("search").addEventListener("input",render);
-
-function contactWhatsApp(message){
- // WhatsApp nömrəsini öz nömrənizlə dəyişin
- const phone="994XXXXXXXXX";
- if(phone.includes("X")){
-  alert("WhatsApp nömrəsi hələ əlavə edilməyib.");
-  return;
- }
- window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(message));
-}
-
-render();
 </script>
 </body>
 </html>
+
+HTML
